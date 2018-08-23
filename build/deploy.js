@@ -14,15 +14,15 @@ var deploy_path = path.join(process.cwd(), '.deploy');
 if(fs.existsSync(deploy_path)){
     var load = loading('  Pushing code!!')
     load.start();
-    ghpages.publish(deploy_path,{ 
-        repo: 'git@github.com:jaywcjlove/linux-command.git',
+    ghpages.publish(deploy_path,{
+        repo: 'git@github.com:Mervyn1205/linux-command.git',
         branch: 'gh-pages',
         message: 'Linux command index, Compiler generation page ' + new Date()
-    }, function(err) { 
+    }, function(err) {
         if(err) return console.log(error('  → '+"ok!"+err));
         load.stop()
         console.log(success('\n\n   '+"Push success!!"));
         // 删除文件夹
         exec('rm -rf .deploy');
-    });   
+    });
 }
